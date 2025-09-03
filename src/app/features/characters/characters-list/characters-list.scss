@@ -1,0 +1,54 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    font-weight: 600;
+    color: #004d61; 
+    background: #f5fbfe; 
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  td {
+    padding: 12px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tr:last-child td {
+    border-bottom: none; 
+  }
+}
+
+/* Estilo da imagem do personagem */
+td img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; // circular
+  object-fit: cover;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* Alinha imagem + texto lado a lado */
+td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Card geral da tabela */
+.mat-elevation-z8 {
+  border-radius: 10px;
+  padding: 8px;
+  background: #fff;
+}
+
+/* Remove qualquer sombra muito forte e deixa suave */
+.mat-elevation-z8 {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}

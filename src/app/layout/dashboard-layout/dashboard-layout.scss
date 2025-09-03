@@ -1,0 +1,12 @@
+.dashboard-body {
+  display: flex; 
+  flex: 1;       
+}
+
+
+.content {
+  flex: 1;            /* ocupa o espaço restante */
+  padding: 1rem;
+  background: #fff;
+  overflow-y: auto;   /* scroll se tiver tabela grande */
+}
