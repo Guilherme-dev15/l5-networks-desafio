@@ -1,1 +1,25 @@
-<p>episode-detail works!</p>
+@if (details) {
+  <section class="episode-header">
+    <h1>{{ details.episode }} | {{ details.name }}</h1>
+    <p>{{ details.air_date | date:'dd/MM/yyyy' }}</p>
+  </section>
+
+  @if (characters.length > 0) {
+    <section class="characters-section">
+      <h2>Personagens</h2>
+      <div class="characters-grid">
+        @for (char of characters; track char.id) {
+          <a [routerLink]="['/character', char.id]" class="character-card">
+            <img [src]="char.image" [alt]="'Imagem de ' + char.name">
+            <div class="character-info">
+              <span class="character-name">{{ char.name }}</span>
+              <span class="character-species">{{ char.species }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </section>
+  }
+} @else {
+  <p>Carregando detalhes do episódio...</p>
+}

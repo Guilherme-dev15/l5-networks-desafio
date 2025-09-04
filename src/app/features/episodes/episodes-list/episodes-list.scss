@@ -1,0 +1,7 @@
+.clickable-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5; // Um cinza claro para o efeito hover
+  }
+}
