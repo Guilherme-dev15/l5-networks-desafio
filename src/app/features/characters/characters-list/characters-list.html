@@ -1,24 +1,42 @@
-<table mat-table [dataSource]="characters" class="mat-elevation-z8">
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let character"> <img [src]="character.image" [alt]="character.name">{{character.name}}
-    </td>
-  </ng-container>
+<div class="table-container"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="500"
+     (scrolled)="onScroll()">
 
-  <!-- Espécie Column -->
-  <ng-container matColumnDef="species">
-    <th mat-header-cell *matHeaderCellDef> Specie </th>
-    <td mat-cell *matCellDef="let character"> {{character.species}} </td>
-  </ng-container>
-
-  <!-- Status Column -->
-  <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let character"> {{character.status}} </td>
-  </ng-container>
-  <!-- Link acessar a rota de detalhes do personagens -->
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"[routerLink]="['/characters', row.id]" class="clickable-row"></tr>
-
+  <table mat-table [dataSource]="characters" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Personagem </th>
+      <td mat-cell *matCellDef="let character">
+        <div class="character-cell">
+          <img [src]="character.image" [alt]="character.name">
+          <span>{{ character.name }}</span>
+        </div>
+      </td>
+    </ng-container>
   
-</table>
+    <!-- Espécie Column -->
+    <ng-container matColumnDef="species">
+      <th mat-header-cell *matHeaderCellDef> Espécie </th>
+      <td mat-cell *matCellDef="let character"> {{character.species}} </td>
+    </ng-container>
+  
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let character"> {{character.status}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/characters', row.id]" class="clickable-row"></tr>
+  </table>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    Carregando mais...
+  </div>
+
+  <div *ngIf="!isLoading && characters.length === 0" class="no-results">
+    Nenhum resultado encontrado.
+  </div>
+</div>

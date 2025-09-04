@@ -1,3 +1,31 @@
+
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.search-container {
+  flex: 1 1 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  
+
+}
+
+.search-field {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 20px;
+  
+}
+
+
 .header {
   background: #ffffff;
   border-bottom: 1px solid #e0e0e0;
@@ -5,15 +33,17 @@
   display: flex;
   align-items: center;
   padding: 0 16px;
+
 }
 
 .header-left {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px; /* aqui controla o espaço entre logo e texto */
+  gap: 12px;
 }
+
+
 
 .logo {
   height: 40px;

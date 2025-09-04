@@ -1,7 +1,18 @@
 <mat-toolbar class="header">
-  <div class="header-left">
-    <img src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" alt="Rick & Morty Logo" class="logo">
-    
+  <div class="header-content">
+    <a routerLink="/" class="logo-link">
+      <img src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" alt="Rick & Morty Logo" class="logo">
+    </a>
+
+    <!-- Barra de Busca -->
+    <div class="search-container" *ngIf="showSearch">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Buscar...</mat-label>
+        <input matInput type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange($event)">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
     <span class="title">Dashboard</span>
   </div>
 </mat-toolbar>
