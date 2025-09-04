@@ -1,12 +1,18 @@
-.dashboard-body {
-  display: flex; 
-  flex: 1;       
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.dashboard-body {
+  display: flex;
+  flex: 1;
+
+}
 
 .content {
-  flex: 1;            /* ocupa o espaço restante */
+  flex: 1;
   padding: 1rem;
-  background: #fff;
-  overflow-y: auto;   /* scroll se tiver tabela grande */
+  background: #ECF3F8;
+  overflow-y: auto;
 }

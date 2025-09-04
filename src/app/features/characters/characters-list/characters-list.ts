@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService, Character as character } from '../../../core/services/api.service';
 import { MatTableModule } from '@angular/material/table';
+import {RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-characters-list',
-  imports: [MatTableModule],
+  imports: [MatTableModule, RouterModule],
   templateUrl: './characters-list.html',
   styleUrl: './characters-list.scss'
 })

@@ -1,1 +1,77 @@
-<p>character-detail works!</p>
+@if (details) {
+<section class="character-detail">
+  <div class="details-content">
+    <div>
+      <img [src]="details.image" [alt]="'Image of ' + details.name" />
+    </div>
+    <div class="informations">
+      <div class="container-informations">
+
+        <h2>{{ details.name }}</h2>
+        <div class="info-details">
+          <div>
+            <p>
+              <strong>Status:</strong> <span>
+                {{ details.status }}
+              </span>
+            </p>
+
+            <p>
+              <strong>Type:</strong>
+              <span>
+                {{ details.type || '--' }}
+              </span>
+            </p>
+
+            <p>
+              <strong>Origin:</strong>
+              <span>
+                {{ details.origin.name }}
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <p>
+              <strong>Location:</strong>
+              <span>
+                {{ details.location.name }}
+              </span>
+            </p>
+            <p>
+              <strong>Species:</strong>
+              <span>
+                {{ details.species }}
+              </span>
+            </p>
+
+            <p>
+              <strong>Gender:</strong>
+              <span>
+                {{ details.gender }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="character-episode" *ngIf="episodes.length > 0">
+  <h3>Episódios</h3>
+  <ul>
+    @for (ep of episodes; track ep.id) {
+      <li>
+        <a class="episode-name">{{ ep.name }}</a>
+        <span class="episode-code">{{ ep.episode }}</span>
+      </li>
+    }
+  </ul>
+</section>
+
+
+
+} @else {
+<p>Loading character details...</p>
+}

@@ -1,0 +1,122 @@
+.character-detail {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.character-detail img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.container-informations {
+    display: flex;
+    flex-direction: column;
+}
+
+.informations {
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 4px;
+}
+
+.info-details p {
+    display: flex;
+    justify-content: flex-start;
+    gap: 46px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #444;
+    font-family: 'Roboto', sans-serif;
+}
+span{
+    width: 100%;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #045660;
+    margin-bottom: 6px;
+}
+
+strong {
+    font-weight: 600;
+    color: #045660;
+}
+
+/*Episodios Card*/
+
+.character-episode {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.character-episode h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #045660;
+  margin-bottom: 12px;
+}
+
+.character-episode ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.character-episode li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.character-episode li:last-child {
+  margin-bottom: 0;
+}
+
+.episode-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #045660;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.episode-name:hover {
+  text-decoration: underline;
+}
+
+.episode-code {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}

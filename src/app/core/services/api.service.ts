@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+// Tipagem de Personagem
 export interface Character {
   id: number;
   name: string;
@@ -9,24 +10,49 @@ export interface Character {
   species: string;
   image: string;
   episode: string[];
+  origin: { name: string; url: string };
+  location: { name: string; url: string };
+  gender: string;
+  type: string;
+}
+
+// Tipagem de Episódio 
+export interface Episode {
+  id: number;
+  name: string;
+  episode: string;   
+  air_date: string;  
 }
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private apiUrl = 'https://rickandmortyapi.com/api';
+  private readonly apiUrl = 'https://rickandmortyapi.com/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
-  //Listar todos personagens
+  //  Personagens
   getCharacters(): Observable<{ results: Character[] }> {
     return this.http.get<{ results: Character[] }>(`${this.apiUrl}/character`);
-
   }
-  //Listar personagem por ID
-  getCharacterById(id: number): Observable<Character>{
+
+  getCharacterById(id: number): Observable<Character> {
     return this.http.get<Character>(`${this.apiUrl}/character/${id}`);
   }
 
-  
+  // Episódios
+  getEpisodes(): Observable<{ results: Episode[] }> {
+    return this.http.get<{ results: Episode[] }>(`${this.apiUrl}/episode`);
+  }
 
+  getEpisodeById(id: number): Observable<Episode> {
+    return this.http.get<Episode>(`${this.apiUrl}/episode/${id}`);
+  }
+
+  getEpisodeByUrl(url: string): Observable<Episode> {
+    return this.http.get<Episode>(url);
+  }
+
+  getEpisodesByIds(ids: number[]): Observable<Episode[]> {
+    return this.http.get<Episode[]>(`${this.apiUrl}/episode/${ids.join(',')}`);
+  }
 }
