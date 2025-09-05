@@ -16,11 +16,7 @@ A aplicação está hospedada na Vercel:
 
 ---
 
-##   
 
-*(Sugestão: grave um GIF curto da aplicação em ação com ferramentas como [ScreenToGif](https://www.screentogif.com/) ou [recordit](https://recordit.co/) — isso cria um README mais vivo e envolvente.)*
-
----
 
 ##  Funcionalidades Implementadas
 
