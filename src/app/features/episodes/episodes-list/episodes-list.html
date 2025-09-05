@@ -1,8 +1,5 @@
-<div class="table-container"
-     infiniteScroll
-     [infiniteScrollDistance]="2"
-     [infiniteScrollThrottle]="500"
-     (scrolled)="onScroll()">
+<div class="table-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()">
 
   <table mat-table [dataSource]="episodes" class="mat-elevation-z8" *ngIf="episodes.length > 0">
     <ng-container matColumnDef="number">
@@ -30,14 +27,17 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/episode', row.id]" class="clickable-row"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/episode', row.id]"
+      class="clickable-row"></tr>
   </table>
 
   <div *ngIf="isLoading" class="loading-spinner">
     Carregando mais...
   </div>
 
-  <div *ngIf="!isLoading && episodes.length === 0" class="no-results">
-    Nenhum resultado encontrado.
-  </div>
+  @if(!isLoading && episodes.length === 0){
+    <div class="no-results">
+      Nenhum resultado encontrado.
+    </div>
+  }
 </div>
