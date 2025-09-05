@@ -1,4 +1,4 @@
-# Desafio Frontend L5 Networks – Rick & Morty SPA
+# Desafio Frontend – Rick & Morty SPA
 
 Esta é uma **Single Page Application (SPA)** desenvolvida em **Angular** como parte do desafio técnico para a vaga de Desenvolvedor Frontend na **L5 Networks**.  
 A aplicação consome a [API do Rick & Morty](https://rickandmortyapi.com/) para exibir informações sobre **personagens** e **episódios** em um layout de dashboard.
