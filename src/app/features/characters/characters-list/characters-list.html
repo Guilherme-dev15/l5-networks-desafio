@@ -1,8 +1,7 @@
-<div class="table-container"
-     infiniteScroll
-     [infiniteScrollDistance]="2"
-     [infiniteScrollThrottle]="500"
-     (scrolled)="onScroll()">
+<div class="table-container" infiniteScroll 
+      [infiniteScrollDistance]="2" 
+      [infiniteScrollThrottle]="500"
+      (scrolled)="onScroll()">
 
   <table mat-table [dataSource]="characters" class="mat-elevation-z8">
     <!-- Name Column -->
@@ -15,28 +14,35 @@
         </div>
       </td>
     </ng-container>
-  
+
     <!-- Espécie Column -->
     <ng-container matColumnDef="species">
       <th mat-header-cell *matHeaderCellDef> Espécie </th>
       <td mat-cell *matCellDef="let character"> {{character.species}} </td>
     </ng-container>
-  
+
     <!-- Status Column -->
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef> Status </th>
       <td mat-cell *matCellDef="let character"> {{character.status}} </td>
     </ng-container>
-    
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/characters', row.id]" class="clickable-row"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" 
+        [routerLink]="['/characters', row.id]"
+        class="clickable-row"></tr>
   </table>
 
-  <div *ngIf="isLoading" class="loading-spinner">
-    Carregando mais...
-  </div>
+  @if (isLoading) {
+    <div class="loading-spinner">
+      Carregando mais...
+    </div>
+  }
+  
+  @if (!isLoading && characters.length === 0) {
+    <div class="no-results">
+      Nenhum resultado encontrado.
+    </div>
+  }
 
-  <div *ngIf="!isLoading && characters.length === 0" class="no-results">
-    Nenhum resultado encontrado.
-  </div>
 </div>
