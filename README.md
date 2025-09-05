@@ -1,59 +1,106 @@
-# L5NetworksDesafio
+# Desafio Frontend L5 Networks – Rick & Morty SPA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+Esta é uma **Single Page Application (SPA)** desenvolvida em **Angular** como parte do desafio técnico para a vaga de Desenvolvedor Frontend na **L5 Networks**.  
+A aplicação consome a [API do Rick & Morty](https://rickandmortyapi.com/) para exibir informações sobre **personagens** e **episódios** em um layout de dashboard.
 
-## Development server
+---
 
-To start a local development server, run:
+##  Autor  
+**Guilherme dos Anjos Macedo**
 
-```bash
+---
+
+##  Deploy  
+A aplicação está hospedada na Vercel:  
+🔗 [Acesse o projeto online](https://rickmorty-4vlcxnozg-guilherme-dev15s-projects.vercel.app/characters/4)
+
+---
+
+##   
+
+*(Sugestão: grave um GIF curto da aplicação em ação com ferramentas como [ScreenToGif](https://www.screentogif.com/) ou [recordit](https://recordit.co/) — isso cria um README mais vivo e envolvente.)*
+
+---
+
+##  Funcionalidades Implementadas
+
+A aplicação atende a todos os requisitos obrigatórios e opcionais do desafio:
+
+- [✔️] **Layout de Dashboard**  
+  - Cabeçalho e menu lateral fixos asseguram navegação clara e consistente.
+
+- [✔️] **Listagem de Personagens**  
+  - Mostra personagens com **scroll infinito** para carregamento contínuo.
+
+- [✔️] **Listagem de Episódios**  
+  - Também possui **scroll infinito** para a navegação fluida.
+
+- [✔️] **Páginas de Detalhes**  
+  - Rotas específicas `/characters/:id` e `/episode/:id` apresentam detalhes completos ao clicar.
+
+- [✔️] **Roteamento Angular**  
+  - Navegação entre páginas gerenciada pelo sistema de rotas do Angular.
+
+- [✔️] **Barra de Busca Global**  
+  - Exibida somente nas páginas de listagem.  
+  - Filtra dinamicamente os resultados ativos — personagens ou episódios.  
+  - O termo buscado permanece mesmo após navegação entre as listagens.
+
+- [✔️] **Histórico de Navegação**  
+  - Registra todas as rotas visitadas.  
+  - Utiliza **localStorage** para manter o histórico mesmo após recarregamento.
+
+- [✔️] **Página de Perfil (Opcional)**  
+  - Uma página estática adicional criada como bônus.
+
+- [🚧] **Responsividade**  
+  - Responsivo em essência; ainda precisa de ajustes para dispositivos menores.
+
+---
+
+##  Tecnologias Utilizadas
+
+- **Angular 20** (Standalone Components) — modularidade e organização.  
+- **TypeScript** — segurança, tipagem e clareza no código.  
+- **SCSS** — estilos estruturados com variáveis e organização.  
+- **RxJS** — reatividade e gerenciamento de estados assíncronos.  
+- **Angular Material** — componentes de UI consistentes e acessíveis.  
+- **ngx-infinite-scroll** — rolagem infinita eficiente para listagens.
+
+---
+
+##  Estrutura do Projeto
+
+```plaintext
+src/
+ ├── app/
+ │   ├── core/              # Serviços, modelos e infraestruturas compartilhadas
+ │   ├── features/          # Módulos: personagens, episódios, perfil
+ │   ├── shared/            # Componentes reutilizáveis e utilitários
+ │   ├── app.routes.ts      # Definição das rotas principais
+ │   └── app.component.ts   # Componente raiz com layout base
+ ├── assets/                # Imagens, ícones e arquivos estáticos
+ └── styles/                # Estilos globais (SCSS)
+
+
+## ⚙️ Como Executar Localmente
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/rick-morty-spa.git
+   cd rick-morty-spa
+Instale as dependências:
+
+bash
+Copy code
+npm install
+Inicie o servidor local:
+
+bash
+Copy code
 ng serve
-```
+Acesse no navegador:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+arduino
+Copy code
+http://localhost:4200
