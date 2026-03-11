@@ -22,10 +22,9 @@ A aplicação está hospedada na Vercel.
 https://rickmorty-4vlcxnozg-guilherme-dev15s-projects.vercel.app
 
 ---
-
 # 🎥 Demonstração
 
-[![Preview do Projeto]](https://raw.githubusercontent.com/Guilherme-dev15/l5-networks-desafio/refs/heads/main/Rick%20Morty.gif)
+![Preview do Projeto](https://raw.githubusercontent.com/Guilherme-dev15/l5-networks-desafio/refs/heads/main/Rick%20Morty.gif)
 
 ---
 
